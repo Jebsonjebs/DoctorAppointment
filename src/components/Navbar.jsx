@@ -96,13 +96,13 @@ const Navbar = () => {
 
               )
             ) : (
-              <button onClick={openSignIn} className='bg-indigo-500 text-gray-200 px-8 py-3 rounded-full '>Login</button>
+              <button onClick={openSignIn} className='bg-indigo-500 mr-3 text-gray-200 px-8 py-3 rounded-full '>Login</button>
             )}
           </>
         }
         <img onClick={()=>setShowMneu(true)} className='w-6 md:hidden' src={assets.menu_icon} alt="" />
         {/* mob menu */}
-        <div className={` ${showMenu ? 'fixed w-full' :'h-0 w-0'} md:hidden right-0 top-0 bottom-0 z-20 overflow-hidden bg-white transition-all`}>
+        <div className={` ${showMenu ? 'fixed w-full' :'h-0 w-0'} md:hidden right-0 top-0 bottom-0 z-20 overflow-hidden  bg-white transition-all`}>
            <div className='flex items-center justify-between px-5 py-6'>
             <img  className='w-36' src={assets.logo} alt="" />
             <img className='w-7' onClick={()=>setShowMneu(false)} src={assets.cross_icon} alt="" />
