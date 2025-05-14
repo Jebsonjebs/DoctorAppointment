@@ -164,7 +164,7 @@ const Appointment = () => {
                 </p>
               ))}
           </div>
-          {status1 && status2 ? (
+          { status2 ? (
             <button
               onClick={() =>
                 Swal.fire({
