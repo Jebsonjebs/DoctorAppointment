@@ -121,42 +121,46 @@ const Appointment = () => {
         </div>
         {/*  date and time */}
         <div className="sm:ml-72 sm:pl-4 mt-4 font-medium text-gray-700 ">
-          <p>Booking Slots</p>
+          <div className="flex flex-col items-center justify-center mt-8 mb-2">
+          <p className="text-xl font-semibold text-gray-700 mb-2">Booking Slots</p>
+        </div>
           {/* day */}
-          <div className="flex gap-3 items-center w-full mb-4 mt-4 ">
+          <div className="flex gap-6 items-center w-full mb-4 mt-4 justify-center">
             {docSlots.length &&
               docSlots.map((item, index) => (
                 <div
                   onClick={() => {
                     setSlotIndex(index), setStatus1(true);
                   }}
-                  className={`text-center py-6 min-w-16 rounded-full cursor-pointer ${
+                  className={`flex flex-col items-center justify-center w-16 h-20 rounded-lg shadow-md cursor-pointer transition-all duration-200 ${
                     slotIndex === index
-                      ? "bg-gray-800 text-white"
-                      : " text-gray-500 border border-gray-300"
+                      ? "bg-gray-800 text-white scale-105 border-2 border-gray-500"
+                      : "bg-gray-100 text-gray-700 hover:bg-blue-50"
                   }`}
                   key={index}
                 >
-                  <p>{item[0] && daysOfWeek[item[0].datetime.getDay()]}</p>
-                  <p className="mb-4">
+                  <span className="text-xs font-semibold">
+                    {item[0] && daysOfWeek[item[0].datetime.getDay()]}
+                  </span>
+                  <span className="text-xl font-bold mt-2">
                     {item[0] && item[0].datetime.getDate()}
-                  </p>
+                  </span>
                 </div>
               ))}
           </div>
           {/* time */}
           <div
             onClick={() => setStatus2(true)}
-            className="flex items-center gap-3 w-full overflow-x-scroll  mt-4 no-scrollbar"
+            className="flex flex-wrap gap-4 w-full mt-4 justify-center"
           >
             {docSlots.length &&
               docSlots[slotIndex].map((item, index) => (
                 <p
                   onClick={() => setSlotTime(item.time)}
-                  className={`text-sm font-light flex-shrink-0 px-5 py-2 rounded-full cursor-pointer ${
+                  className={`text-sm font-medium px-6 py-2 rounded-lg cursor-pointer shadow transition-all duration-200 ${
                     item.time === slotTime
-                      ? "bg-gray-800 text-white"
-                      : " text-gray-500 border border-gray-300"
+                      ? "bg-gray-800 text-white scale-105 border-2 border-gray-500"
+                      : "bg-gray-100 text-gray-700 hover:bg-blue-50"
                   } `}
                   key={index}
                 >
