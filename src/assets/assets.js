@@ -37,7 +37,7 @@ import Gynecologist from './Gynecologist.svg'
 import Neurologist from './Neurologist.svg'
 import Pediatricians from './Pediatricians.svg'
 import LogoTransparent from './logo-transparent.png'
-import Banner1 from'./Banner1.png'
+import Banner1 from'./banner1.png'
 
 
 
